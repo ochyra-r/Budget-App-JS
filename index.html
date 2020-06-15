@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__heading">Budget App</h1>
+    </header>
+    <main class="budget">
+      <section class="budget__form">
+        <p class="error hide" data-error>
+          Description can't be empty, value must be positive number
+        </p>
+        <ul class="inputs">
+          <li class="switch">
+            <input
+              type="checkbox"
+              class="switch__input"
+              name="swich"
+              id="switch"
+              checked
+            />
+            <label for="switch" class="switch__label"></label>
+          </li>
+          <li class="input">
+            <input
+              type="text"
+              class="input__input"
+              name="description"
+              id="description"
+              placeholder="Description"
+            />
+            <label for="description" class="input__label">Description</label>
+          </li>
+          <li class="input">
+            <input
+              type="number"
+              class="input__input"
+              name="value"
+              id="value"
+              placeholder="Value"
+              min="0"
+            />
+            <label for="value" class="input__label">Value</label>
+          </li>
+          <li class="inputs__button">
+            <button class="button" data-enter-button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                class="button__icon"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </section>
+      <section class="budget__balance">
+        <h2 class="balance__heading" data-total-budget-info></h2>
+        <article class="balance__list" data-balance-list>
+          <section class="list">
+            <h3 class="list__heading list__heading--incomes">Incomes</h3>
+            <ul class="list__list" data-balance-list-incomes></ul>
+          </section>
+          <section class="list">
+            <h3 class="list__heading list__heading--expenses">Expenses</h3>
+            <ul class="list__list" data-balance-list-expenses></ul>
+          </section>
+        </article>
+      </section>
+    </main>
+    <script src="./js/index.js"></script>
+    <script>
+      const app = new BudgetApp();
+      app.initializeApp();
+    </script>
+  </body>
+</html>
